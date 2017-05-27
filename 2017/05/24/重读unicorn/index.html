@@ -41,7 +41,7 @@
 				<h1 class="site-name"><a href="/" title="二叔会编程">二叔会编程</a></h1>
 				<h2 class="blog-motto">个人博客，技术为主，八卦为辅，菜鸟请点赞，老鸟请指教，撕逼请绕行。</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -58,7 +58,7 @@
 					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:qiuxiafei.me">
 					</form>
 					
@@ -82,7 +82,7 @@
     </p>
   <p class="article-time">
     <time datetime="2017-05-24T13:52:04.000Z" itemprop="datePublished">2017-05-24</time>
-    更新日期:<time datetime="2017-05-25T16:28:16.000Z" itemprop="dateModified">2017-05-26</time>
+    Updated:<time datetime="2017-05-27T06:52:43.000Z" itemprop="dateModified">2017-05-27</time>
     
   </p>
 </header>
@@ -90,12 +90,12 @@
 		
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目錄</strong>
+			<strong class="toc-title">Contents</strong>
 		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#unicorn是什么？"><span class="toc-number">1.</span> <span class="toc-text">unicorn是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据模型"><span class="toc-number">2.</span> <span class="toc-text">数据模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统架构"><span class="toc-number">3.</span> <span class="toc-text">系统架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查询语言"><span class="toc-number">4.</span> <span class="toc-text">查询语言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Weak-And与Strong-Or"><span class="toc-number">4.1.</span> <span class="toc-text">Weak-And与Strong-Or</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Apply"><span class="toc-number">4.2.</span> <span class="toc-text">Apply</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Extract"><span class="toc-number">4.3.</span> <span class="toc-text">Extract</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
 		</div>
 		
 		<p>第一次读<code>Unicorn</code>是刚刚开始接触图计算这个领域的时候，囫囵吞枣地把这篇Paper看了一遍，对于其中的内容也没有特别的感觉，主要是当时资历尚欠。一个多月前，我们的架构师同学建议我再读一读这篇Paper，说起其中很多值得借鉴的地方。过了一年多，在这个领域或多或少有些经验了，希望这次能够有不同的感受。</p>
-<h2 id="unicorn是什么？"><a href="#unicorn是什么？" class="headerlink" title="unicorn是什么？"></a>unicorn是什么？</h2><p>简而言之，<code>Unicorn</code>是一个在线的、全内存的图索引系统。所谓在线，即一般的请求在百毫秒内返回，全内存的设计也是服务与此；它支持在社交网络上进行高效的查询，来提升传统搜索引擎面对图结构时的不足；它只是一个索引系统，而不是一个『图数据库』。</p>
+<h2 id="unicorn是什么？"><a href="#unicorn是什么？" class="headerlink" title="unicorn是什么？"></a>unicorn是什么？</h2><p>简而言之，<code>Unicorn</code>是Facebook的一个在线的、全内存的图索引系统。所谓在线，即一般的请求在百毫秒内返回，全内存的设计也是服务与此；它支持在社交网络上进行高效的查询，来提升传统搜索引擎面对图结构时的不足；它只是一个索引系统，而不是一个『图数据库』。</p>
 <p>Facebook的社交网络中有百亿级别的顶点、万亿级别的边。所有顶点都有64位的唯一ID，边更是有上千种类型，既可以有向也可以无向。图中存在一些热点，但是整体比较稀疏，大部分节点的边在1000以下。</p>
 <h2 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h2><p>刚才提到，<code>Unicorn</code>中存的图是十分稀疏的，因此很自然地采用了『邻接表』的形式来存储图结构。<code>Unicorn</code>的查询语言把<code>&lt;edge-type&gt;:&lt;id&gt;</code>这样的结构称作<code>Term</code>，即某个点的某种类型的邻接点。比如，ID为8的用户的所有朋友写作：<code>friend:8</code>。每个<code>Term</code>对应着系统中的一个邻接表，而系统为每个点的每种类型的边维护这么一个邻接表。邻接表中的每个元素是一个邻接点，用<code>(sort-key, id, hit-data)</code>三元组。其中：</p>
 <ul>
@@ -172,15 +172,15 @@
 
 	
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
+  <strong class="toc-title">Contents</strong>
   <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#unicorn是什么？"><span class="toc-number">1.</span> <span class="toc-text">unicorn是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据模型"><span class="toc-number">2.</span> <span class="toc-text">数据模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统架构"><span class="toc-number">3.</span> <span class="toc-text">系统架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查询语言"><span class="toc-number">4.</span> <span class="toc-text">查询语言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Weak-And与Strong-Or"><span class="toc-number">4.1.</span> <span class="toc-text">Weak-And与Strong-Or</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Apply"><span class="toc-number">4.2.</span> <span class="toc-text">Apply</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Extract"><span class="toc-number">4.3.</span> <span class="toc-text">Extract</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
@@ -188,7 +188,7 @@
   
 
   <div class="rsspart">
-	<a href="null" target="_blank" title="rss">RSS 訂閱</a>
+	<a href="null" target="_blank" title="rss">RSS</a>
 </div>
 
 </aside>
