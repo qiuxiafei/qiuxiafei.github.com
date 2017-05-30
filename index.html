@@ -1,199 +1,653 @@
+<!doctype html>
 
- <!DOCTYPE HTML>
-<html lang="Chinese">
-<head>
-  <meta charset="UTF-8">
+
+
   
-    <title>二叔会编程</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
     
-    <meta name="author" content="qiuxiafei">
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
     
-    
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="qiuxiafei" />
-    <meta name="twitter:title" content="二叔会编程" />
-      
-    
-    
-    
-    <link rel="icon" href="/img/favicon.ico">
-    
-    
-    <link rel="apple-touch-icon" href="/img/pacman.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
-    
-    <link rel="stylesheet" href="/css/style.css">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="qiuxiafei, compute, graph, distributed, system, database, bigdata" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="Do not pray for an easy life, pray for the strength to endure a difficult one.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="二叔会编程">
+<meta property="og:url" content="http://qiuxiafei.me/index.html">
+<meta property="og:site_name" content="二叔会编程">
+<meta property="og:description" content="Do not pray for an easy life, pray for the strength to endure a difficult one.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="二叔会编程">
+<meta name="twitter:description" content="Do not pray for an easy life, pray for the strength to endure a difficult one.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"right","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://qiuxiafei.me/"/>
+
+
+
+
+
+  <title>二叔会编程</title>
 </head>
 
-  <body>
-    <header>
-      <div>
-		
-			<div id="imglogo">
-				<a href="/"><img src="/img/logo.svg" alt="二叔会编程" title="二叔会编程"/></a>
-			</div>
-			
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="二叔会编程">二叔会编程</a></h1>
-				<h2 class="blog-motto">个人博客，技术为主，八卦为辅，菜鸟请点赞，老鸟请指教，撕逼请绕行。</h2>
-			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
-			</a></div>
-			<nav class="animated">
-				<ul>
-					
-						<li><a href="/">Home</a></li>
-					
-						<li><a href="/archives">Archives</a></li>
-					
-						<li><a href="/tags">Tags</a></li>
-					
-						<li><a href="/categories">Categories</a></li>
-					
-					<li>
-					
-					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
-						<input type="hidden" name="q" value="site:qiuxiafei.me">
-					</form>
-					
-					</li>
-				</ul>
-			</nav>			
-</div>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-    </header>
-    <div id="container">
-      <div id="main">
+  
 
-  <section class="post" itemscope itemprop="blogPost">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-    <a href="/2017/05/24/重读unicorn/" title="重读unicorn" itemprop="url">
   
-    <h1 itemprop="name">重读unicorn</h1>
     
-     
-           <p itemprop="description" >第一次读Unicorn是刚刚开始接触图计算这个领域的时候，囫囵吞枣地把这篇Paper看了一遍，对于其中的内容也没有特别的感觉，主要是当时资历尚欠。一个多月前，我们的架构师同学建议我再读一读这篇Paper，说起其中很多值得借鉴的地方。过了一年多，在这个领域或多或少有些经验了，希望这</p>
-        
+  
+
+  <div class="container sidebar-position-right 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
     
-    <time datetime="2017-05-24T13:52:04.000Z" itemprop="datePublished">2017-05-24</time>
-  </a>
-</section>
 
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2017/05/23/hello-world/" title="Hello World, [Again]!" itemprop="url">
-  
-    <h1 itemprop="name">Hello World, [Again]!</h1>
-    
-     
-           <p itemprop="description" >Hello World, [Again]!重新开始写博客，这个博客将会是以技术为主、八卦为辅的风格。技术部分会尽量硬核一些，不会像之前那样涉及太多『细碎』或者『流行』的东西。八卦部分不太确定，可能比较杂，有鸡汤之类的文章。
-好，开始吧！</p>
-        
-    
-    <time datetime="2017-05-23T14:48:35.000Z" itemprop="datePublished">2017-05-23</time>
-  </a>
-</section>
-
-
-</div>
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
-
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
-<aside class="clearfix">
-
-  
-
-  
-
-  <div class="rsspart">
-	<a href="null" target="_blank" title="rss">RSS</a>
-</div>
-
-</aside>
-</div>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">二叔会编程</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-    <footer><div id="footer" >
-	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Do not pray for an easy life, <br/>
-			pray for the strength to endure a difficult one.</p>
-	</section>
-	 
-	<div class="social-font clearfix">
-		
-		<a href="http://weibo.com/qiuxiafei" target="_blank" title="weibo"></a>
-		
-		
-		<a href="https://twitter.com/qiuxiafei" target="_blank" title="twitter"></a>
-		
-		
-		<a href="https://github.com/qiuxiafei" target="_blank" title="github"></a>
-		
-		
-		
-	</div>
-		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2017 
-		
-		<a href="http://qiuxiafei.me" target="_blank" title="qiuxiafei">qiuxiafei</a>
-		
-		</p>
+      
+        <p class="site-subtitle">个人博客，技术为主，八卦为辅，菜鸟请点赞，老鸟请指教，撕逼请绕行。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
-</footer>
-    <script src="/js/jquery-2.1.0.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      o = $('.openaside');
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else
-    {
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
         
-    }
-  });
-  c.click(function(){
-    a.addClass('fadeOut').css('display', 'none');
-    o.css('display', 'block').addClass('fadeIn');
-    m.addClass('moveMain');
-  });
-  o.click(function(){
-    o.css('display', 'none').removeClass('beforeFadeIn');
-    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
-    m.removeClass('moveMain');
-  });
-  $(window).scroll(function(){
-    o.css("top",Math.max(80,260-$(this).scrollTop()));
-  });
-});
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://qiuxiafei.me/2017/05/24/重读unicorn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="qiuxiafei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="二叔会编程">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/24/重读unicorn/" itemprop="url">重读unicorn</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-24T21:52:04+08:00">
+                2017-05-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>第一次读<code>Unicorn</code>是刚刚开始接触图计算这个领域的时候，囫囵吞枣地把这篇Paper看了一遍，对于其中的内容也没有特别的感觉，主要是当时资历尚欠。一个多月前，我们的架构师同学建议我再读一读这篇Paper，说起其中很多值得借鉴的地方。过了一年多，在这个领域或多或少有些经验了，希望这次能够有不同的感受。</p>
+<h2 id="unicorn是什么？"><a href="#unicorn是什么？" class="headerlink" title="unicorn是什么？"></a>unicorn是什么？</h2><p>简而言之，<code>Unicorn</code>是Facebook的一个在线的、全内存的图索引系统。所谓在线，即一般的请求在百毫秒内返回，全内存的设计也是服务与此；它支持在社交网络上进行高效的查询，来提升传统搜索引擎面对图结构时的不足；它只是一个索引系统，而不是一个『图数据库』。</p>
+<p>Facebook的社交网络中有百亿级别的顶点、万亿级别的边。所有顶点都有64位的唯一ID，边更是有上千种类型，既可以有向也可以无向。图中存在一些热点，但是整体比较稀疏，大部分节点的边在1000以下。</p>
+<h2 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h2><p>刚才提到，<code>Unicorn</code>中存的图是十分稀疏的，因此很自然地采用了『邻接表』的形式来存储图结构。<code>Unicorn</code>的查询语言把<code>&lt;edge-type&gt;:&lt;id&gt;</code>这样的结构称作<code>Term</code>，即某个点的某种类型的邻接点。比如，ID为8的用户的所有朋友写作：<code>friend:8</code>。每个<code>Term</code>对应着系统中的一个邻接表，而系统为每个点的每种类型的边维护这么一个邻接表。邻接表中的每个元素是一个邻接点，用<code>(sort-key, id, hit-data)</code>三元组。其中：</p>
+<ul>
+<li><code>sort-key</code>表示这个这个点的全局rank值，在所有包含该点的邻接表中都是一样的；</li>
+<li><code>id</code>就是邻接点的ID；</li>
+<li><code>hit-data</code>可有可无，一般会包含一些用于过滤的属性数据；</li>
+</ul>
+<img src="/2017/05/24/重读unicorn/data-model.png" alt="数据模型（图片来自unicorn论文）" title="数据模型（图片来自unicorn论文）">
+<p>从数据结构来看，<code>Unicorn</code>可以看做是『Topylogy-Only』的，点上没有任何属性，边上也只有需要参与查询的属性。这一点与常见的『<a href="https://github.com/tinkerpop/blueprints/wiki/Property-Graph-Model" target="_blank" rel="external">属性图</a>』模型有着很大的区别，<strong><code>Unicorn</code>是更加纯粹的面向搜索场景的『索引系统』</strong>。</p>
+<p>另外，<code>unicorn</code>中的边是『按照终点分区』的，也就是说，查询某个点的所有出边需要到所有包含这种类型的边的机器上进行查询。这样做有两个好处：</p>
+<ol>
+<li>大部分的集合操作都能够下推到最底层的的所有节点执行，避免了把数据捞回到Aggregator上操作。比如『找用户A和B都赞过的照片』，由于边是按照终点（也就是照片）切分，所有赞过某张照片的边都会在同一个分区中，那么全局的操作就等价于在所有分区上执行该操作的结果的集合。<strong>这一点可以极大减少数据传输量</strong>。</li>
+<li>如果有节点宕机，也能是返回部分结果的，在搜索的场景中<strong>『部分结果优于没有结果』</strong>。</li>
+</ol>
+<p>那么问题就来了，如果我既要查『小明给哪些照片点赞了』又要查『这张照片都被那些人点赞了』怎么办？<code>unicorn</code>的解法是，创建两种类型的边<code>likes</code>和<code>likers</code>。之前也提到，点边都是没有属性的，所以数据冗余的代价不会特别夸张。</p>
+<h2 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h2><img src="/2017/05/24/重读unicorn/sys-arch.png" alt="系统架构（图片来自unicorn论文）" title="系统架构（图片来自unicorn论文）">
+<p>从下往上看：</p>
+<ol>
+<li>不同类型的边的数据是放在不同的<code>vertical</code>中的，比如，用户相关的在user vertical，应用相关的在app vertical。</li>
+<li>不同的<code>vertical</code>相互独立，有不同的分区数和副本数。</li>
+<li>每个机架内有Aggregator和Index Server，即存储计算混部。</li>
+<li>最上层有Top Aggregator负责接收请求，拆分后路由到不同的<code>vertical</code>执行。</li>
+</ol>
+<p>有意思的是，<code>unicorn</code>中不同的数据类型有不同的分区方式和副本策略，甚至是可以独立运维的。相对于图计算中的各种全图统一分区算法，有着鲜明的特色。这样做的好处是：</p>
+<ol>
+<li>充分考虑业务的多样性。不同的业务数据规模、访问流量都不一样，分开管理在运维上是最有效的方式。</li>
+<li>社交网络中的查询一般会指向少量的数据类型，因此分开带来的额外网络开销可以忽略。</li>
+</ol>
+<h2 id="查询语言"><a href="#查询语言" class="headerlink" title="查询语言"></a>查询语言</h2><p><code>unicorn</code>基于<code>s-express</code>构建查询语言，查询操作主要以集合操作(<code>AND</code>/<code>OR</code>/<code>DIFFRENCE</code>)和<code>Term</code>表达式为主，比如：</p>
+<ul>
+<li><code>(and friends:5 gender:1)</code>：用户<code>5</code>的所有男性朋友</li>
+<li><code>(or friends:5 friends:6)</code>：用户<code>6</code>的所有好友</li>
+<li><code>(difference (and friends:5 gender:1) friends:6)</code>：用户<code>5</code>的所有男性朋友中不是用户<code>6</code>好友的人</li>
+</ul>
+<p>当然，这上面的都不够亮眼，以下才是：</p>
+<h3 id="Weak-And与Strong-Or"><a href="#Weak-And与Strong-Or" class="headerlink" title="Weak-And与Strong-Or"></a>Weak-And与Strong-Or</h3><p>举个例子，用户<code>3</code>搜索一个名字以<code>mel</code>开头的用户，我们期望返回给他的结果集中既有他的朋友，也有不是他的朋友的人。通过<code>and</code>语句是无法做到的，于是<code>unicorn</code>引入了<code>weak-and</code>，允许一定程度上不满足<code>and</code>条件的结果出现。这是为了兼顾搜索的相关性和结果的多样性。</p>
+<p>同理，<code>strong-or</code>的引入允许<code>or</code>条件中的某一部分在最终结果集中不小于某个比例，这也是为了兼顾结果的多样性。比如，搜索用户<code>5</code>居住在北京或者上海的朋友。如果北京的结果集就填满了最终结果集，这样的搜索质量是不高的。</p>
+<h3 id="Apply"><a href="#Apply" class="headerlink" title="Apply"></a>Apply</h3><p>为了实现图遍历，<code>unicorn</code>引入了<code>apply</code>操作符。例如：<code>(apply tagged: friend:5)</code>表示查找用户<code>5</code>的朋友标记过的图片。首先执行的是<code>friends:5</code>，每一个结果都被『apply』到<code>tagged:</code>上进行图上的第二度扩展。</p>
+<p>因为<code>unicorn</code>的面临的在线低延迟场景，很多<code>apply</code>查询也就一层而已。所以现对于<code>Gremlin</code>/<code>Cypher</code>等语言强劲的表达能力，<code>apply</code>可以说是不多不少，恰好够用。它至少让用户不用与后端多次交互来实现图的遍历，整个查询下沉到后端，对于简化应用逻辑、优化执行效率都是有好处的。</p>
+<h3 id="Extract"><a href="#Extract" class="headerlink" title="Extract"></a>Extract</h3><p><code>extract</code>操作是另外一个有意思的事情。社交图谱中有一类典型的模式是：海量小关系。比如，系统中几十亿张图片，每张图片上有若干个被标记的用户。按照一般的做法，会在photo vertical中保存用户到图片的『拥有』关系，在user vertical中保存图片到用户的『被标记』关系。如此一来，所有同一个PhotoId会在多个用户的<code>tagged:</code>邻接表中出现，同时还伴有<code>sort-key</code>和<code>hit-data</code>等数据结构，数据膨胀想当可观。</p>
+<p><code>unicorn</code>的巧妙之处在于，在photo vertical中通过一个正排索引保存了photo到user的<code>tagged:</code>关系，通过<code>extract</code>操作去查询正排索引，相当于把<code>tagged:</code>关系『内联』到了photo vertical中。这样做既节省了空间，又简化了查询过程，一举多得。</p>
+<p>这对我们的启发很重要，保存拓扑关系的方式不止一种，根据数据的特性使用最合适的方式是可以同时达到时空的最优的。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><code>unicorn</code>中有意思之处不仅限于上述几点，还有物化频繁查询的多度关系、多度查询的第一度按rank截断、多级Aggregator等等。这些特点带有鲜明的在线系统和搜索场景的特征。可以说，是场景造就了系统。同时，物化多度关系、内联简单关系等手段，也是其他图场景可以借鉴的地方。</p>
+<p>在看过了很多图数据库和离线图计算系统之后，再回过头来看<code>unicorn</code>得到的最大启发是：场景！场景！场景！</p>
+<p>目前『图』的场景还是一片蓝海，场景此岸是延时、彼岸是吞吐，海上一定会有连接两岸许多点分别切入各自的场景。同时，结构化与非结构化、精确关系代数与模糊查询、完备表达能力与业务裁剪之间的关系都是值得去思索和探究。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://qiuxiafei.me/2017/05/23/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="qiuxiafei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="二叔会编程">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/23/hello-world/" itemprop="url">Hello World, [Again]!</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-23T22:48:35+08:00">
+                2017-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Hello-World-Again"><a href="#Hello-World-Again" class="headerlink" title="Hello World, [Again]!"></a>Hello World, [Again]!</h2><p>重新开始写博客，这个博客将会是以技术为主、八卦为辅的风格。技术部分会尽量硬核一些，不会像之前那样涉及太多『细碎』或者『流行』的东西。八卦部分不太确定，可能比较杂，有鸡汤之类的文章。</p>
+<p>好，开始吧！</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="qiuxiafei" />
+          <p class="site-author-name" itemprop="name">qiuxiafei</p>
+           
+              <p class="site-description motion-element" itemprop="description">Do not pray for an easy life, pray for the strength to endure a difficult one.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">qiuxiafei</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
@@ -202,5 +656,112 @@ $(document).ready(function(){
 
 
 
-  </body>
- </html>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "9f44b226adb34781aa7768704ee119d8",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
