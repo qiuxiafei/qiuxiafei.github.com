@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>二叔会编程</title>
+  <subtitle>个人博客，技术为主，八卦为辅，菜鸟请点赞，老鸟请指教，撕逼请绕行。</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://qiuxiafei.me/"/>
+  <updated>2017-05-27T06:52:43.000Z</updated>
+  <id>http://qiuxiafei.me/</id>
+  
+  <author>
+    <name>qiuxiafei</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>重读unicorn</title>
+    <link href="http://qiuxiafei.me/2017/05/24/%E9%87%8D%E8%AF%BBunicorn/"/>
+    <id>http://qiuxiafei.me/2017/05/24/重读unicorn/</id>
+    <published>2017-05-24T13:52:04.000Z</published>
+    <updated>2017-05-27T06:52:43.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;第一次读&lt;code&gt;Unicorn&lt;/code&gt;是刚刚开始接触图计算这个领域的时候，囫囵吞枣地把这篇Paper看了一遍，对于其中的内容也没有特别的感觉，主要是当时资历尚欠。一个多月前，我们的架构师同学建议我再读一读这篇Paper，说起其中很多值得借鉴的地方。过了一年多，在这
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World, [Again]!</title>
+    <link href="http://qiuxiafei.me/2017/05/23/hello-world/"/>
+    <id>http://qiuxiafei.me/2017/05/23/hello-world/</id>
+    <published>2017-05-23T14:48:35.000Z</published>
+    <updated>2017-05-23T15:01:39.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Hello-World-Again&quot;&gt;&lt;a href=&quot;#Hello-World-Again&quot; class=&quot;headerlink&quot; title=&quot;Hello World, [Again]!&quot;&gt;&lt;/a&gt;Hello World, [Again]!&lt;/h2&gt;&lt;p&gt;重新
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
